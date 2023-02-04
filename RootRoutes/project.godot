@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "FreeRoot",
+"language": "GDScript",
+"path": "res://scripts/FreeRoot.gd"
+} ]
+_global_script_class_icons={
+"FreeRoot": "res://textures/root-down.png"
+}
+
 [application]
 
 config/name="RootRoutes"

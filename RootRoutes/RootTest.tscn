@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Button.gd" type="Script" id=1]
-[ext_resource path="res://scripts/RootSystem.gd" type="Script" id=2]
-[ext_resource path="res://textures/root-test.png" type="Texture" id=3]
+[ext_resource path="res://scripts/Root.gd" type="Script" id=2]
+[ext_resource path="res://textures/root-down.png" type="Texture" id=3]
+[ext_resource path="res://textures/root-right.png" type="Texture" id=4]
+[ext_resource path="res://textures/root-left.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 39.0128
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 45.5, 10 )
+extents = Vector2( 23, 23.5 )
 
 [node name="RootTest" type="Node2D"]
-script = ExtResource( 2 )
 
 [node name="Button" type="Area2D" parent="."]
 position = Vector2( 290, 134 )
@@ -34,15 +35,23 @@ margin_right = 98.0
 margin_bottom = -3.0
 text = "Mushroom Fruiting Body"
 
-[node name="Rooty" type="Area2D" parent="."]
+[node name="RootDown" type="Area2D" parent="Button" groups=["placed"]]
+position = Vector2( -2, 58 )
+script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooty"]
-position = Vector2( 45.5, 0 )
+[node name="Root-down" type="Sprite" parent="Button/RootDown"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/RootDown"]
 shape = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="Rooty"]
-texture = ExtResource( 3 )
-centered = false
-offset = Vector2( 0, -14 )
+[node name="Sprite" type="Sprite" parent="Button/RootDown"]
+visible = false
+texture = ExtResource( 5 )
 
-[connection signal="mouse_entered" from="Button" to="." method="_on_Button_mouse_entered"]
+[node name="Sprite" type="Sprite" parent="Button"]
+visible = false
+texture = ExtResource( 4 )
+
+[connection signal="hovered" from="Button/RootDown" to="Button" method="_on_Root_hovered"]
+[connection signal="mouse_entered" from="Button/RootDown" to="Button/RootDown" method="_on_Root_mouse_entered"]
