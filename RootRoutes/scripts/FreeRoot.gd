@@ -19,26 +19,22 @@ func choose_anim(pointer):
 	if pointer.x > origin.x:
 		if pointer.y > origin.y:
 			player.play("down-right")
-			player.flip_v = false
+			$Label.text = "down-right"
 		elif pointer.y < origin.y:
-			player.play("down-right")
-			player.flip_v = true
+			player.play("up-right")
+			$Label.text = "up-right"
 		else:
 			player.play("right")
-			player.flip_v = false
+			$Label.text = "right"
 	elif pointer.x < origin.x:
 		if pointer.y > origin.y:
 			player.play("down-left")
-			player.flip_h = false
 		elif pointer.y < origin.y:
-			player.play("down-left")
-			player.flip_h = true
+			player.play("up-left")
 		else:
 			player.play("left")
-			player.flip_h = false
 	else:
 		if pointer.y > origin.y:
 			player.play("down")
 		else:
-			player.play("down")
-			player.flip_v = true
+			player.play("up")
