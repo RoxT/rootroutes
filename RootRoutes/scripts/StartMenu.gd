@@ -18,5 +18,5 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventKey:
-		var err = get_tree().change_scene("res://Main_Rs_COPY.tscn")
+		var err = get_tree().change_scene("res://Main_Rs_NatCOPY.tscn")
 		if err != OK: print(err)
