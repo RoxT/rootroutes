@@ -7,6 +7,7 @@ const STEP = 48
 onready var player:AnimatedSprite = $RootSprite
 var age = 0;
 const maturity = 7
+var is_dead := false
 
 signal hovered(Node2D)
 signal clicked
@@ -36,6 +37,9 @@ func _unhandled_input(event):
 			match a.name:
 				"Rock":
 					return
+				var a_name:
+					print("Unkn: " + a_name)
+					return
 		
 		get_tree().set_input_as_handled() 
 		if free_root.position == Vector2.ZERO: return
@@ -48,7 +52,7 @@ func _unhandled_input(event):
 		new_root.choose_anim(free_root.position)
 		free_root.queue_free()
 		emit_signal("clicked")
-		
+
 func deactivate():
 	if active:
 		free_root.queue_free()
@@ -70,6 +74,7 @@ func _on_Root_mouse_entered():
 func die():
 	var anim = player.animation + "-dead"
 	player.animation = anim
+	is_dead = true
 
 func choose_anim(pointer):
 	if abs(pointer.x) > STEP || abs(pointer.y) > STEP: return
