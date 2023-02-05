@@ -64,8 +64,8 @@ func _unhandled_input(event):
 							$GoodChime.play()
 							a.visible = true
 							$Pause.start()
-							$Nitro.visible = true
-							emit_signal("inv_changed", "nitro", 10)
+							$Trade.visible = true
+							emit_signal("trade")
 						"Fish":
 							$GoodChime.play()
 							a.visible = true
