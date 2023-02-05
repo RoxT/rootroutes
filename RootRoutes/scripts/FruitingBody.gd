@@ -10,6 +10,8 @@ signal restart
 var sugar := 10
 var nitro := 10
 
+var trading := 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$RootDown.connect("hovered", get_parent(), "_on_Root_hovered")
@@ -21,11 +23,16 @@ func _process(delta):
 	pass
 
 func _on_clicked():
+	if trading > 0:
+		var trade = min(trading, nitro)
+		nitro = nitro - trade
+		sugar = sugar + trade
+	
 	sugar = sugar - 1
 	update_ineventory()
 	if sugar <= 0:
 		var dead_roots = []
-		$Inventory/Label.text = "XXXXXX"
+		$Inventory/Label.text = ""
 		for c in get_children():
 			if c is Root:
 				var dead_root = DeadRoot.instance()
@@ -43,6 +50,9 @@ func _on_clicked():
 				
 func update_ineventory():
 	$Inventory/Label.text = "Sugar: " + str(sugar) + "\n" + "Nitogen: " + str(nitro)
+
+func _on_trade():
+	trading = trading + 1
 
 func _on_Root_hovered(root: Node2D):
 	if active_root:

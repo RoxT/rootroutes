@@ -14,6 +14,7 @@ const ITEM = "item"
 signal hovered(node)
 signal clicked
 signal inv_changed(thing, amount)
+signal trade()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,14 +47,34 @@ func _unhandled_input(event):
 					a.visible = true
 					$Pause.start()
 					$Nitro.visible = true
-					a.add_to_group(USED)
 					emit_signal("inv_changed", "nitro", 10)
+				"Fern":
+					a.visible = true
+					$Pause.start()
+					$Nitro.visible = true
+					emit_signal("inv_changed", "nitro", 10)
+				"Fish":
+					a.visible = true
+					$Pause.start()
+					$Nitro.visible = true
+					emit_signal("inv_changed", "nitro", 10)
+				"Worm":
+					a.visible = true
+					$Pause.start()
+					$MinusSugar.visible = true
+					emit_signal("inv_changed", "sugar", -1)
+				"Tree":
+					a.visible = true
+					$Pause.start()
+					$Trade.visible = true
+					emit_signal("trade")
 				var a_name:
 					if a_name.find("DeadRoot"):
 						for c in a.get_parent().get_children():
 							c.visible = true
-					print("Unkn: " + a_name)
-					return
+					else:
+						print("Unkn: " + a_name)
+						return
 		
 		get_tree().set_input_as_handled() 
 		if free_root.position == Vector2.ZERO: return
@@ -64,6 +85,7 @@ func _unhandled_input(event):
 		new_root.connect("hovered", get_parent(), "_on_Root_hovered")
 		new_root.connect("clicked", get_parent(), "_on_clicked")
 		new_root.connect("inv_changed", get_parent(), "_on_Root_inv_changed")
+		new_root.connect("trade", get_parent(), "_on_trade")
 		new_root.choose_anim(free_root.position)
 		free_root.queue_free()
 		emit_signal("clicked")
@@ -115,4 +137,5 @@ func choose_anim(pointer):
 
 
 func _on_Pause_timeout():
+	get_tree().call_group("message", "set_visible", false)
 	$Nitro.visible = false
