@@ -49,6 +49,10 @@ func _on_clicked():
 			if c is Root:
 				c.tick()
 				
+func handle_hover(pointer):
+	if active_root == null: return
+	active_root.handle_hover(pointer)
+				
 func update_ineventory():
 	$Inventory/Label.text = "Sugar: " + str(sugar) + "\n" + "Nitogen: " + str(nitro)
 

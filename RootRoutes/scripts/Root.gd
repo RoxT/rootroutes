@@ -29,16 +29,18 @@ func tick():
 	age = age+1
 	if age >= maturity:
 		player.play("mature")
+		
+func handle_hover(pointer: Vector2):
+	if !is_instance_valid(free_root): return
+	var hover = to_local(pointer).snapped(Vector2(STEP, STEP))
+	free_root.get_node("Label").text = str(pointer) + "\n" + str(hover)
+	hover.x = clamp(hover.x, -STEP, STEP)
+	hover.y = clamp(hover.y, -STEP, STEP)
+	free_root.position = hover
+	free_root.choose_anim(hover)
 	
 func _unhandled_input(event):
 	if !active: return
-	if event is InputEventMouseMotion:
-		# While dragging, move the sprite with the mouse.
-		var pointer = to_local(event.position).snapped(Vector2(STEP, STEP))
-		pointer.x = clamp(pointer.x, -STEP, STEP)
-		pointer.y = clamp(pointer.y, -STEP, STEP)
-		free_root.position = pointer
-		free_root.choose_anim(pointer)
 	if event is InputEventMouseButton && event.is_pressed() == true:
 		var areas = free_root.get_overlapping_areas()
 		if !areas.empty(): print(str(areas))

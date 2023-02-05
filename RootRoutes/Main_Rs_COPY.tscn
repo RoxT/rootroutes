@@ -10,7 +10,7 @@
 [ext_resource path="res://textures/rockblue3.png" type="Texture" id=8]
 [ext_resource path="res://textures/rockblue4.png" type="Texture" id=9]
 [ext_resource path="res://textures/message-youdied.png" type="Texture" id=10]
-[ext_resource path="res://resources/root routes - 1 bar.mp3" type="AudioStream" id=11]
+[ext_resource path="res://resources/root routes.mp3" type="AudioStream" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 26.0
@@ -285,10 +285,10 @@ position = Vector2( 3744, 168 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )
+volume_db = -18.0
 autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 528, 240 )
 current = true
 limit_left = 0
 limit_top = 0
