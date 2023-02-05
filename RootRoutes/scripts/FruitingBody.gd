@@ -54,7 +54,7 @@ func handle_hover(pointer):
 	active_root.handle_hover(pointer)
 				
 func update_ineventory():
-	$Inventory/Label.text = "Sugar: " + str(sugar) + "\n" + "Nitogen: " + str(nitro)
+	$Inventory/Label.text = "Sugar: " + str(sugar) + "\n" + "Nitrogen: " + str(nitro)
 
 func _on_trade():
 	trading = trading + 1
