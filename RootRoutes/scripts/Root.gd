@@ -60,7 +60,9 @@ func activate(rooty:Area2D):
 func _on_Root_mouse_entered():
 	emit_signal("hovered", self)
 	
-	
+func die():
+	player.animation = player.animation + "-dead"
+
 func choose_anim(pointer):
 	if abs(pointer.x) > STEP || abs(pointer.y) > STEP: return
 	if pointer.x == STEP:
