@@ -32,6 +32,7 @@ func _on_clicked():
 	sugar = sugar - 1
 	update_ineventory()
 	if sugar <= 0:
+		$DeathRattle.play()
 		var dead_roots = []
 		$Inventory/Label.text = ""
 		for c in get_children():
