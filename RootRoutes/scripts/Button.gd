@@ -18,6 +18,9 @@ func _on_clicked():
 	$Inventory/Label.text = "Sugar: " + str(sugar)
 	if sugar <= 0:
 		$Inventory/Label.text = "YOU DIED"
+		for c in get_children():
+			if c is Root:
+				c.die()
 		get_tree().paused = true
 	for c in get_children():
 		if c is Root:
