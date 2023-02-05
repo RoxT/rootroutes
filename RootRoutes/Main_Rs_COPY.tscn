@@ -41,16 +41,14 @@ radius = 25.7099
 extents = Vector2( 21, 23.5 )
 
 [node name="Main" type="Node2D"]
-position = Vector2( 0, 240 )
 script = ExtResource( 1 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 0, -240 )
 texture = ExtResource( 4 )
 centered = false
 
 [node name="Area2D_fossil" type="Area2D" parent="." groups=["item"]]
-position = Vector2( 192, 384 )
+position = Vector2( 192, 624 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_fossil"]
 position = Vector2( 1, -3 )
@@ -61,7 +59,7 @@ position = Vector2( -1, 5 )
 texture = ExtResource( 2 )
 
 [node name="Area2D_fossil2" type="Area2D" parent="." groups=["item"]]
-position = Vector2( 576, 528 )
+position = Vector2( 576, 768 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_fossil2"]
 position = Vector2( 1, -3 )
@@ -72,7 +70,7 @@ position = Vector2( -1, 5 )
 texture = ExtResource( 2 )
 
 [node name="Area2D_tree" type="Area2D" parent="." groups=["item"]]
-position = Vector2( 480, 192 )
+position = Vector2( 480, 432 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_tree"]
 position = Vector2( -74.5, 70 )
@@ -87,7 +85,7 @@ position = Vector2( -67, -23 )
 texture = ExtResource( 6 )
 
 [node name="Area2D_rock" type="Area2D" parent="." groups=["item"]]
-position = Vector2( 96, 288 )
+position = Vector2( 96, 528 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_rock"]
 shape = SubResource( 4 )
@@ -96,7 +94,7 @@ shape = SubResource( 4 )
 texture = ExtResource( 5 )
 
 [node name="Area2D_rock2" type="Area2D" parent="." groups=["item"]]
-position = Vector2( 55, 426 )
+position = Vector2( 55, 666 )
 
 [node name="Rock" type="Sprite" parent="Area2D_rock2"]
 position = Vector2( -1, 1 )
@@ -107,7 +105,7 @@ position = Vector2( -1, -1 )
 shape = SubResource( 5 )
 
 [node name="Area2D_tree2" type="Area2D" parent="." groups=["item"]]
-position = Vector2( 720, 288 )
+position = Vector2( 720, 528 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_tree2"]
 position = Vector2( 148, -24 )
@@ -122,7 +120,7 @@ position = Vector2( 81, 43 )
 shape = SubResource( 7 )
 
 [node name="Area2D_rockblue" type="Area2D" parent="." groups=["item"]]
-position = Vector2( 240, 528 )
+position = Vector2( 240, 768 )
 
 [node name="Rock" type="Sprite" parent="Area2D_rockblue"]
 position = Vector2( -1, 0 )
@@ -132,7 +130,7 @@ texture = ExtResource( 8 )
 shape = SubResource( 8 )
 
 [node name="Area2D_bluerock2" type="Area2D" parent="." groups=["item"]]
-position = Vector2( 960, 576 )
+position = Vector2( 960, 816 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_bluerock2"]
 position = Vector2( 0, -0.5 )
@@ -161,36 +159,38 @@ text = "asdjhaskjd"
 [node name="Spawn" type="Node2D" parent="."]
 
 [node name="Position2D" type="Position2D" parent="Spawn"]
-position = Vector2( 48, 168 )
+position = Vector2( 10, 394 )
 
 [node name="Position2D2" type="Position2D" parent="Spawn"]
-position = Vector2( 144, 168 )
+position = Vector2( 106, 394 )
 
 [node name="Position2D3" type="Position2D" parent="Spawn"]
-position = Vector2( 240, 168 )
+position = Vector2( 202, 394 )
 
 [node name="Position2D4" type="Position2D" parent="Spawn"]
-position = Vector2( 384, 168 )
+position = Vector2( 346, 394 )
 
 [node name="Position2D5" type="Position2D" parent="Spawn"]
-position = Vector2( 480, 168 )
+position = Vector2( 442, 394 )
 
 [node name="Position2D6" type="Position2D" parent="Spawn"]
-position = Vector2( 576, 168 )
+position = Vector2( 538, 394 )
 
 [node name="Position2D7" type="Position2D" parent="Spawn"]
-position = Vector2( 672, 168 )
+position = Vector2( 634, 394 )
 
 [node name="Position2D8" type="Position2D" parent="Spawn"]
-position = Vector2( 768, 168 )
+position = Vector2( 730, 394 )
 
 [node name="Position2D9" type="Position2D" parent="Spawn"]
-position = Vector2( 864, 168 )
+position = Vector2( 826, 394 )
 
 [node name="Position2D11" type="Position2D" parent="Spawn"]
-position = Vector2( 960, 168 )
+position = Vector2( 922, 394 )
 
 [node name="ExtraSpawn" type="Node2D" parent="."]
+visible = false
+position = Vector2( 0, 240 )
 
 [node name="Position2D12" type="Position2D" parent="ExtraSpawn"]
 position = Vector2( 1056, 168 )
@@ -291,3 +291,4 @@ limit_left = 0
 limit_top = 0
 limit_right = 3840
 limit_bottom = 1152
+editor_draw_limits = true
