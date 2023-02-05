@@ -1,6 +1,6 @@
 extends Area2D
 class_name Root, "res://textures/root-downright.png"
-
+	
 var active := false
 var free_root:FreeRoot
 const STEP = 48
