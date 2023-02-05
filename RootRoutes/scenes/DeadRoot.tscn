@@ -8,7 +8,7 @@ extents = Vector2( 22.5, 21.5 )
 [node name="DeadRoot" type="Area2D" groups=["item"]]
 visible = false
 
-[node name="Sprite" type="AnimatedSprite" parent="."]
+[node name="DeadRoot" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "left-dead"
 

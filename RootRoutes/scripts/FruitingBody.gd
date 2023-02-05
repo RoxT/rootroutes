@@ -17,6 +17,7 @@ func _ready():
 	$RootDown.connect("hovered", get_parent(), "_on_Root_hovered")
 	$RootDown.connect("clicked", get_parent(), "_on_clicked")
 	connect("restart", get_parent(), "_on_restart")
+	update_ineventory()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -37,7 +38,7 @@ func _on_clicked():
 			if c is Root:
 				var dead_root = DeadRoot.instance()
 				dead_root.position = c.position
-				dead_root.get_node("Sprite").animation = c.player.animation + "-dead"
+				dead_root.get_node("DeadRoot").animation = c.player.animation + "-dead"
 				dead_roots.append(dead_root)
 				c.die()
 		for c in dead_roots:

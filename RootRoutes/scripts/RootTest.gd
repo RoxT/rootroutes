@@ -7,6 +7,12 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	get_tree().call_group("item", "set_visible", false)
 	rng.randomize()
+	var pos = $Spawn.get_children()[rng.randi_range(0, $Spawn.get_children().size()-1)].position
+	var new_body = FruitingBody.instance()
+	new_body.position = pos
+	$YouDied.visible = false
+	$YouDied/Timer.connect("timeout", self, "_on_YouDied_Timer_timeout")
+	add_child(new_body)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

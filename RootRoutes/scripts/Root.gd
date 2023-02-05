@@ -18,7 +18,10 @@ signal trade()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	connect("hovered", get_parent(), "_on_Root_hovered")
+	connect("clicked", get_parent(), "_on_clicked")
+	connect("inv_changed", get_parent(), "_on_Root_inv_changed")
+	connect("trade", get_parent(), "_on_trade")
 	
 func tick():
 	age = age+1
@@ -39,42 +42,44 @@ func _unhandled_input(event):
 		if !areas.empty(): print(str(areas))
 		for a in areas:
 			if a.visible == true: break
-			match a.name:
-				"Rock":
-					a.visible = true
-					return
-				"Fossil":
-					a.visible = true
-					$Pause.start()
-					$Nitro.visible = true
-					emit_signal("inv_changed", "nitro", 10)
-				"Fern":
-					a.visible = true
-					$Pause.start()
-					$Nitro.visible = true
-					emit_signal("inv_changed", "nitro", 10)
-				"Fish":
-					a.visible = true
-					$Pause.start()
-					$Nitro.visible = true
-					emit_signal("inv_changed", "nitro", 10)
-				"Worm":
-					a.visible = true
-					$Pause.start()
-					$MinusSugar.visible = true
-					emit_signal("inv_changed", "sugar", -1)
-				"Tree":
-					a.visible = true
-					$Pause.start()
-					$Trade.visible = true
-					emit_signal("trade")
-				var a_name:
-					if a_name.find("DeadRoot"):
-						for c in a.get_parent().get_children():
-							c.visible = true
-					else:
-						print("Unkn: " + a_name)
-						return
+			for c in a.get_children():
+				if c is Sprite || c is AnimatedSprite:
+					match c.name:
+						"Rock":
+							a.visible = true
+							return
+						"Fossil":
+							a.visible = true
+							$Pause.start()
+							$Nitro.visible = true
+							emit_signal("inv_changed", "nitro", 10)
+						"Fern":
+							a.visible = true
+							$Pause.start()
+							$Nitro.visible = true
+							emit_signal("inv_changed", "nitro", 10)
+						"Fish":
+							a.visible = true
+							$Pause.start()
+							$Nitro.visible = true
+							emit_signal("inv_changed", "nitro", 10)
+						"Worm":
+							a.visible = true
+							$Pause.start()
+							$MinusSugar.visible = true
+							emit_signal("inv_changed", "sugar", -1)
+							return
+						"Tree":
+							a.visible = true
+							$Pause.start()
+							$Trade.visible = true
+							emit_signal("trade")
+						"DeadRoot":
+							for i in a.get_parent().get_children():
+								i.visible = true
+						var a_name:
+							print("Unkn: " + a_name)
+							return
 		
 		get_tree().set_input_as_handled() 
 		if free_root.position == Vector2.ZERO: return
@@ -82,10 +87,6 @@ func _unhandled_input(event):
 		var new_root = load("res://scenes/Root.tscn").instance()
 		new_root.position = position + free_root.position
 		get_parent().add_child(new_root)
-		new_root.connect("hovered", get_parent(), "_on_Root_hovered")
-		new_root.connect("clicked", get_parent(), "_on_clicked")
-		new_root.connect("inv_changed", get_parent(), "_on_Root_inv_changed")
-		new_root.connect("trade", get_parent(), "_on_trade")
 		new_root.choose_anim(free_root.position)
 		free_root.queue_free()
 		emit_signal("clicked")

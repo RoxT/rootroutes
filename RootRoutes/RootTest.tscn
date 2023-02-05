@@ -1,6 +1,5 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://scenes/FruitingBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://textures/worm-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://scripts/RootTest.gd" type="Script" id=3]
 [ext_resource path="res://textures/tree.png" type="Texture" id=4]
@@ -87,12 +86,10 @@ margin_right = 19.0
 margin_bottom = 62.0
 text = "asdjhaskjd"
 
-[node name="FruitingBody" parent="." instance=ExtResource( 1 )]
-
 [node name="Rock" type="Area2D" parent="." groups=["item"]]
 position = Vector2( 515, 204 )
 
-[node name="Rockgrey1" type="Sprite" parent="Rock"]
+[node name="Rock" type="Sprite" parent="Rock"]
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rock"]
@@ -112,7 +109,7 @@ shape = SubResource( 3 )
 [node name="Tree" type="Area2D" parent="." groups=["item"]]
 position = Vector2( 783, 143 )
 
-[node name="Fossil" type="Sprite" parent="Tree"]
+[node name="TreeBig" type="Sprite" parent="Tree"]
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree"]
@@ -154,7 +151,7 @@ position = Vector2( 960, 144 )
 [node name="Worm" type="Area2D" parent="." groups=["item"]]
 position = Vector2( 156, 285 )
 
-[node name="Sprite" type="AnimatedSprite" parent="Worm"]
+[node name="Worm" type="AnimatedSprite" parent="Worm"]
 frames = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Worm"]

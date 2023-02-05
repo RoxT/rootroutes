@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="RootRoutes"
-run/main_scene="res://RootTest.tscn"
+run/main_scene="res://Main_Rs_COPY.tscn"
 config/icon="res://textures/mushroom.png"
 
 [gui]
