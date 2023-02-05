@@ -33,7 +33,6 @@ func tick():
 func handle_hover(pointer: Vector2):
 	if !is_instance_valid(free_root): return
 	var hover = to_local(pointer).snapped(Vector2(STEP, STEP))
-	free_root.get_node("Label").text = str(pointer) + "\n" + str(hover)
 	hover.x = clamp(hover.x, -STEP, STEP)
 	hover.y = clamp(hover.y, -STEP, STEP)
 	free_root.position = hover

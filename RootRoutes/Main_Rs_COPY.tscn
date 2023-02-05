@@ -160,128 +160,126 @@ text = "asdjhaskjd"
 [node name="Spawn" type="Node2D" parent="."]
 
 [node name="Position2D" type="Position2D" parent="Spawn"]
-position = Vector2( 10, 394 )
+position = Vector2( 88, 410 )
 
 [node name="Position2D2" type="Position2D" parent="Spawn"]
-position = Vector2( 106, 394 )
+position = Vector2( 156, 410 )
 
 [node name="Position2D3" type="Position2D" parent="Spawn"]
-position = Vector2( 202, 394 )
+position = Vector2( 252, 410 )
 
 [node name="Position2D4" type="Position2D" parent="Spawn"]
-position = Vector2( 346, 394 )
+position = Vector2( 396, 410 )
 
 [node name="Position2D5" type="Position2D" parent="Spawn"]
-position = Vector2( 442, 394 )
+position = Vector2( 492, 410 )
 
 [node name="Position2D6" type="Position2D" parent="Spawn"]
-position = Vector2( 538, 394 )
+position = Vector2( 588, 410 )
 
 [node name="Position2D7" type="Position2D" parent="Spawn"]
-position = Vector2( 634, 394 )
+position = Vector2( 684, 410 )
 
 [node name="Position2D8" type="Position2D" parent="Spawn"]
-position = Vector2( 730, 394 )
+position = Vector2( 780, 410 )
 
 [node name="Position2D9" type="Position2D" parent="Spawn"]
-position = Vector2( 826, 394 )
+position = Vector2( 876, 410 )
 
 [node name="Position2D11" type="Position2D" parent="Spawn"]
-position = Vector2( 922, 394 )
+position = Vector2( 972, 410 )
 
 [node name="ExtraSpawn" type="Node2D" parent="."]
-visible = false
-position = Vector2( 0, 240 )
 
 [node name="Position2D12" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 1056, 168 )
+position = Vector2( 1066, 394 )
 
 [node name="Position2D13" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 1152, 168 )
+position = Vector2( 1162, 394 )
 
 [node name="Position2D14" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 1248, 168 )
+position = Vector2( 1258, 394 )
 
 [node name="Position2D15" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 1344, 168 )
+position = Vector2( 1354, 394 )
 
 [node name="Position2D16" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 1440, 168 )
+position = Vector2( 1450, 394 )
 
 [node name="Position2D17" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 1536, 168 )
+position = Vector2( 1546, 394 )
 
 [node name="Position2D18" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 1632, 168 )
+position = Vector2( 1642, 394 )
 
 [node name="Position2D19" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 1728, 168 )
+position = Vector2( 1738, 394 )
 
 [node name="Position2D20" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 1824, 168 )
+position = Vector2( 1834, 394 )
 
 [node name="Position2D21" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 1920, 168 )
+position = Vector2( 1930, 394 )
 
 [node name="Position2D22" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2016, 168 )
+position = Vector2( 2026, 394 )
 
 [node name="Position2D23" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2016, 168 )
+position = Vector2( 2026, 394 )
 
 [node name="Position2D24" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2112, 168 )
+position = Vector2( 2122, 394 )
 
 [node name="Position2D25" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2208, 168 )
+position = Vector2( 2218, 394 )
 
 [node name="Position2D26" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2304, 168 )
+position = Vector2( 2314, 394 )
 
 [node name="Position2D27" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2400, 168 )
+position = Vector2( 2410, 394 )
 
 [node name="Position2D28" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2496, 168 )
+position = Vector2( 2506, 394 )
 
 [node name="Position2D29" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2592, 168 )
+position = Vector2( 2602, 394 )
 
 [node name="Position2D30" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2688, 168 )
+position = Vector2( 2698, 394 )
 
 [node name="Position2D31" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2784, 168 )
+position = Vector2( 2794, 394 )
 
 [node name="Position2D32" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2880, 168 )
+position = Vector2( 2890, 394 )
 
 [node name="Position2D33" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 2976, 168 )
+position = Vector2( 2986, 394 )
 
 [node name="Position2D34" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 3072, 168 )
+position = Vector2( 3082, 394 )
 
 [node name="Position2D35" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 3168, 168 )
+position = Vector2( 3178, 394 )
 
 [node name="Position2D36" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 3264, 168 )
+position = Vector2( 3274, 394 )
 
 [node name="Position2D37" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 3360, 168 )
+position = Vector2( 3370, 394 )
 
 [node name="Position2D38" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 3456, 168 )
+position = Vector2( 3466, 394 )
 
 [node name="Position2D39" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 3552, 168 )
+position = Vector2( 3562, 394 )
 
 [node name="Position2D40" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 3648, 168 )
+position = Vector2( 3658, 394 )
 
 [node name="Position2D41" type="Position2D" parent="ExtraSpawn"]
-position = Vector2( 3744, 168 )
+position = Vector2( 3754, 394 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )

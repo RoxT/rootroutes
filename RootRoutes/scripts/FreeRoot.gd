@@ -15,6 +15,7 @@ const STEP = 48
 #	pass
 	
 func choose_anim(pointer):
+	$Debug.text = str(pointer)
 	if abs(pointer.x) > STEP || abs(pointer.y) > STEP: return
 	if pointer.x == STEP:
 		if pointer.y == STEP:
