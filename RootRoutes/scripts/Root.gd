@@ -30,6 +30,13 @@ func _unhandled_input(event):
 		free_root.position = pointer
 		free_root.choose_anim(pointer)
 	if event is InputEventMouseButton && event.is_pressed() == true:
+		var areas = free_root.get_overlapping_areas()
+		if !areas.empty(): print(str(areas))
+		for a in areas:
+			match a.name:
+				"Rock":
+					return
+		
 		get_tree().set_input_as_handled() 
 		if free_root.position == Vector2.ZERO: return
 		active = false

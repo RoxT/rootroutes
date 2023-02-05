@@ -4,6 +4,7 @@ var FreeRoot = preload("res://scenes/FreeRoot.tscn")
 var active_root:Root
 
 var sugar := 10
+var nitro := 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,7 +16,7 @@ func _process(delta):
 
 func _on_clicked():
 	sugar = sugar - 1
-	$Inventory/Label.text = "Sugar: " + str(sugar)
+	$Inventory/Label.text = "Sugar: " + str(sugar) + "\n" + "Nitogen: " + str(nitro)
 	if sugar <= 0:
 		$Inventory/Label.text = "YOU DIED"
 		for c in get_children():
