@@ -18,10 +18,12 @@ signal trade()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect("hovered", get_parent(), "_on_Root_hovered")
-	connect("clicked", get_parent(), "_on_clicked")
-	connect("inv_changed", get_parent(), "_on_Root_inv_changed")
-	connect("trade", get_parent(), "_on_trade")
+	var errs = []
+	errs.append(connect("hovered", get_parent(), "_on_Root_hovered"))
+	errs.append(connect("clicked", get_parent(), "_on_clicked"))
+	errs.append(connect("inv_changed", get_parent(), "_on_Root_inv_changed"))
+	errs.append(connect("trade", get_parent(), "_on_trade"))
+	for e in errs: if e != OK: print(e)
 	
 func tick():
 	age = age+1
@@ -97,9 +99,8 @@ func deactivate():
 		active = false
 
 func activate(rooty:Area2D):
-	if !active:
+	if active == false:
 		active = true
-		rooty
 		rooty.position = position
 		rooty.origin = position
 		free_root = rooty

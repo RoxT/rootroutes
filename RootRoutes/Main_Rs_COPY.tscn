@@ -188,3 +188,7 @@ position = Vector2( 864, 168 )
 
 [node name="Position2D11" type="Position2D" parent="Spawn"]
 position = Vector2( 960, 168 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]

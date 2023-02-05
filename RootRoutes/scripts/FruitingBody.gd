@@ -14,14 +14,14 @@ var trading := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$RootDown.connect("hovered", get_parent(), "_on_Root_hovered")
-	$RootDown.connect("clicked", get_parent(), "_on_clicked")
-	connect("restart", get_parent(), "_on_restart")
+	var errs = []
+	errs.append(connect("restart", get_parent(), "_on_restart"))
+	for e in errs: if e != OK: print(e)
 	update_ineventory()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+#func _process(delta):
+#	pass
 
 func _on_clicked():
 	if trading > 0:
