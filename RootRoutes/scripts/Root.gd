@@ -6,7 +6,7 @@ var free_root:FreeRoot
 const STEP = 48
 onready var player:AnimatedSprite = $RootSprite
 var age = 0;
-const maturity = 5
+const maturity = 7
 
 signal hovered(Node2D)
 signal clicked
@@ -61,7 +61,8 @@ func _on_Root_mouse_entered():
 	emit_signal("hovered", self)
 	
 func die():
-	player.animation = player.animation + "-dead"
+	var anim = player.animation + "-dead"
+	player.animation = anim
 
 func choose_anim(pointer):
 	if abs(pointer.x) > STEP || abs(pointer.y) > STEP: return
