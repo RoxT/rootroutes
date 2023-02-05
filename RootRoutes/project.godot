@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "FreeRoot",
 "language": "GDScript",
 "path": "res://scripts/FreeRoot.gd"
+}, {
+"base": "Area2D",
+"class": "Root",
+"language": "GDScript",
+"path": "res://scripts/Root.gd"
 } ]
 _global_script_class_icons={
-"FreeRoot": "res://textures/root-down.png"
+"FreeRoot": "res://textures/arrow-right.png",
+"Root": "res://textures/root-downright.png"
 }
 
 [application]

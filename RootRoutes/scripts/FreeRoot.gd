@@ -1,6 +1,5 @@
 extends Area2D
-
-class_name FreeRoot, "res://textures/root-down.png"
+class_name FreeRoot, "res://textures/arrow-right.png"
 
 onready var player:AnimatedSprite = $AnimatedSprite
 onready var origin:Vector2 = get_parent().position
@@ -16,25 +15,24 @@ func _process(delta):
 	pass
 	
 func choose_anim(pointer):
-	if pointer.x > origin.x:
-		if pointer.y > origin.y:
+	if abs(pointer.x) > STEP || abs(pointer.y) > STEP: return
+	$Label.text = "o: " + str(origin) + " p: " + str(pointer)
+	if pointer.x == STEP:
+		if pointer.y == STEP:
 			player.play("down-right")
-			$Label.text = "down-right"
-		elif pointer.y < origin.y:
+		elif pointer.y == -STEP:
 			player.play("up-right")
-			$Label.text = "up-right"
 		else:
 			player.play("right")
-			$Label.text = "right"
-	elif pointer.x < origin.x:
-		if pointer.y > origin.y:
+	elif pointer.x == -STEP:
+		if pointer.y == STEP:
 			player.play("down-left")
-		elif pointer.y < origin.y:
+		elif pointer.y == -STEP:
 			player.play("up-left")
 		else:
 			player.play("left")
 	else:
-		if pointer.y > origin.y:
+		if pointer.y == STEP:
 			player.play("down")
 		else:
 			player.play("up")

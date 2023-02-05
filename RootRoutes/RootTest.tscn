@@ -1,18 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Button.gd" type="Script" id=1]
-[ext_resource path="res://scripts/Root.gd" type="Script" id=2]
-[ext_resource path="res://textures/root-down.png" type="Texture" id=3]
-[ext_resource path="res://textures/root-right.png" type="Texture" id=4]
-[ext_resource path="res://textures/root-left.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Root.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/RootTest.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 39.0128
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 23, 23.5 )
-
 [node name="RootTest" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Button" type="Area2D" parent="."]
 position = Vector2( 290, 134 )
@@ -35,23 +31,18 @@ margin_right = 98.0
 margin_bottom = -3.0
 text = "Mushroom Fruiting Body"
 
-[node name="RootDown" type="Area2D" parent="Button" groups=["placed"]]
-position = Vector2( -2, 58 )
-script = ExtResource( 2 )
+[node name="RootDown" parent="Button" instance=ExtResource( 2 )]
 
-[node name="Root-down" type="Sprite" parent="Button/RootDown"]
-texture = ExtResource( 3 )
+[node name="Inventory" type="Control" parent="Button"]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/RootDown"]
-shape = SubResource( 2 )
+[node name="Label" type="Label" parent="Button/Inventory"]
+margin_left = -31.0
+margin_top = -66.0
+margin_right = 33.0
+margin_bottom = -52.0
+text = "Sugar 10"
 
-[node name="Sprite" type="Sprite" parent="Button/RootDown"]
-visible = false
-texture = ExtResource( 5 )
-
-[node name="Sprite" type="Sprite" parent="Button"]
-visible = false
-texture = ExtResource( 4 )
-
+[connection signal="clicked" from="Button/RootDown" to="Button" method="_on_RootDown_clicked"]
 [connection signal="hovered" from="Button/RootDown" to="Button" method="_on_Root_hovered"]
-[connection signal="mouse_entered" from="Button/RootDown" to="Button/RootDown" method="_on_Root_mouse_entered"]
