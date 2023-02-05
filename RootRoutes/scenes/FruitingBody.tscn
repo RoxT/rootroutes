@@ -29,7 +29,3 @@ margin_top = -123.0
 margin_right = 38.0
 margin_bottom = -109.0
 text = "Sugar 10"
-
-[node name="Debug" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0

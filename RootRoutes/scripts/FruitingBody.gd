@@ -51,7 +51,6 @@ func _on_clicked():
 				
 func handle_hover(pointer):
 	if !is_instance_valid(active_root): return
-	$Debug.text = str(pointer)
 	active_root.handle_hover(pointer)
 				
 func update_ineventory():
