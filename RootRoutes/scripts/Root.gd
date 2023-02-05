@@ -45,12 +45,14 @@ func _unhandled_input(event):
 		var areas = free_root.get_overlapping_areas()
 		if !areas.empty(): print(str(areas))
 		for a in areas:
+			if a.is_in_group("obs"):return
 			if a.visible == true: break
 			for c in a.get_children():
 				if c is Sprite || c is AnimatedSprite:
 					match c.name:
 						"Rock":
 							a.visible = true
+							a.add_to_group("obs")
 							return
 						"Fossil":
 							$GoodChime.play()
@@ -76,7 +78,7 @@ func _unhandled_input(event):
 							$Pause.start()
 							$MinusSugar.visible = true
 							emit_signal("inv_changed", "sugar", -1)
-							return
+							c.play()
 						"Tree":
 							$GoodChime.play()
 							a.visible = true
