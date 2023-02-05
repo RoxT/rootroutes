@@ -46,6 +46,7 @@ func _unhandled_input(event):
 	if !is_instance_valid(current_body): return
 	if event is InputEventMouseMotion:
 		var pointer = get_global_mouse_position()
+		if pointer.y <= 450: return
 		current_body.handle_hover(pointer)
 
 func _on_restart():

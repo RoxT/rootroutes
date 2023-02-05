@@ -17,10 +17,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -510.5
-margin_top = -401.0
-margin_right = 510.5
-text = "YOU ARE A MUSHROOM
+margin_left = -510.0
+margin_top = -398.0
+margin_right = 511.0
+text = "Root Routes
+
+YOU ARE A MUSHROOM
 
 Hover over one of your roots to activate it. Then click to put down a new root.
 
