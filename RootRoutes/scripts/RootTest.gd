@@ -11,6 +11,7 @@ func _ready():
 	var new_body = FruitingBody.instance()
 	new_body.position = pos
 	$YouDied.visible = false
+	$YouDied.position = new_body.position
 	$YouDied/Timer.connect("timeout", self, "_on_YouDied_Timer_timeout")
 	add_child(new_body)
 
@@ -30,4 +31,5 @@ func _on_YouDied_Timer_timeout():
 	var new_body = FruitingBody.instance()
 	new_body.position = pos
 	$YouDied.visible = false
+	$YouDied.position = new_body.position
 	add_child(new_body)
