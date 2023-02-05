@@ -24,6 +24,7 @@ func _ready():
 	errs.append(connect("inv_changed", get_parent(), "_on_Root_inv_changed"))
 	errs.append(connect("trade", get_parent(), "_on_trade"))
 	for e in errs: if e != OK: print(e)
+	$RootSquish.play()
 	
 func tick():
 	age = age+1
@@ -52,27 +53,32 @@ func _unhandled_input(event):
 							a.visible = true
 							return
 						"Fossil":
+							$GoodChime.play()
 							a.visible = true
 							$Pause.start()
 							$Nitro.visible = true
 							emit_signal("inv_changed", "nitro", 10)
 						"Fern":
+							$GoodChime.play()
 							a.visible = true
 							$Pause.start()
 							$Nitro.visible = true
 							emit_signal("inv_changed", "nitro", 10)
 						"Fish":
+							$GoodChime.play()
 							a.visible = true
 							$Pause.start()
 							$Nitro.visible = true
 							emit_signal("inv_changed", "nitro", 10)
 						"Worm":
+							$BadBuzzer.play()
 							a.visible = true
 							$Pause.start()
 							$MinusSugar.visible = true
 							emit_signal("inv_changed", "sugar", -1)
 							return
 						"Tree":
+							$GoodChime.play()
 							a.visible = true
 							$Pause.start()
 							$Trade.visible = true
