@@ -50,7 +50,7 @@ func _on_clicked():
 				c.tick()
 				
 func handle_hover(pointer):
-	if active_root == null: return
+	if !is_instance_valid(active_root): return
 	active_root.handle_hover(pointer)
 				
 func update_ineventory():

@@ -10,7 +10,7 @@
 [ext_resource path="res://textures/rockblue3.png" type="Texture" id=8]
 [ext_resource path="res://textures/rockblue4.png" type="Texture" id=9]
 [ext_resource path="res://textures/message-youdied.png" type="Texture" id=10]
-[ext_resource path="res://resources/root routes.mp3" type="AudioStream" id=11]
+[ext_resource path="res://resources/root routes wav.wav" type="AudioStream" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 26.0
