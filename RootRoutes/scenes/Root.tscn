@@ -156,11 +156,11 @@ volume_db = -18.0
 
 [node name="RootSquish" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 23 )
-volume_db = -18.0
+volume_db = -9.0
 
 [node name="BadBuzzer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 25 )
-volume_db = -18.0
+volume_db = -10.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_Root_mouse_entered"]
 [connection signal="timeout" from="Pause" to="." method="_on_Pause_timeout"]
