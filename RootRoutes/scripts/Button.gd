@@ -22,9 +22,10 @@ func _on_clicked():
 			if c is Root:
 				c.die()
 		get_tree().paused = true
-	for c in get_children():
-		if c is Root:
-			c.tick()
+	else:
+		for c in get_children():
+			if c is Root:
+				c.tick()
 
 func _on_Root_hovered(root: Node2D):
 	if active_root:
