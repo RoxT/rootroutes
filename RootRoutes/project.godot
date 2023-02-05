@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://scripts/FreeRoot.gd"
 }, {
 "base": "Area2D",
+"class": "FruitingBody",
+"language": "GDScript",
+"path": "res://scripts/FruitingBody.gd"
+}, {
+"base": "Area2D",
 "class": "Root",
 "language": "GDScript",
 "path": "res://scripts/Root.gd"
 } ]
 _global_script_class_icons={
 "FreeRoot": "res://textures/arrow-right.png",
+"FruitingBody": "res://textures/mushroom.png",
 "Root": "res://textures/root-downright.png"
 }
 

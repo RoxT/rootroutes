@@ -16,7 +16,6 @@ func _process(delta):
 	
 func choose_anim(pointer):
 	if abs(pointer.x) > STEP || abs(pointer.y) > STEP: return
-	$Label.text = "o: " + str(origin) + " p: " + str(pointer)
 	if pointer.x == STEP:
 		if pointer.y == STEP:
 			player.play("down-right")

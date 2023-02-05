@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=18 format=2]
+[gd_resource type="SpriteFrames" load_steps=26 format=2]
 
 [ext_resource path="res://textures/root-right.png" type="Texture" id=1]
 [ext_resource path="res://textures/root-downleft.png" type="Texture" id=2]
@@ -7,37 +7,65 @@
 [ext_resource path="res://textures/root-mature.png" type="Texture" id=5]
 [ext_resource path="res://textures/root-down.png" type="Texture" id=6]
 [ext_resource path="res://textures/root-up.png" type="Texture" id=7]
-[ext_resource path="res://textures/arrow-right.png" type="Texture" id=8]
-[ext_resource path="res://textures/arrow-downleft.png" type="Texture" id=9]
+[ext_resource path="res://textures/deadroot-downleft.png" type="Texture" id=8]
+[ext_resource path="res://textures/deadroot-up.png" type="Texture" id=9]
 [ext_resource path="res://textures/root-upright.png" type="Texture" id=10]
-[ext_resource path="res://textures/arrow-downright.png" type="Texture" id=11]
+[ext_resource path="res://textures/deadroot-upleft.png" type="Texture" id=11]
 [ext_resource path="res://textures/root-upleft.png" type="Texture" id=12]
-[ext_resource path="res://textures/arrow-upright.png" type="Texture" id=13]
-[ext_resource path="res://textures/arrow-up.png" type="Texture" id=14]
-[ext_resource path="res://textures/arrow-down.png" type="Texture" id=15]
-[ext_resource path="res://textures/arrow-left.png" type="Texture" id=16]
-[ext_resource path="res://textures/arrow-upleft.png" type="Texture" id=17]
+[ext_resource path="res://textures/deadroot-mature.png" type="Texture" id=13]
+[ext_resource path="res://textures/deadroot-down.png" type="Texture" id=14]
+[ext_resource path="res://textures/deadroot-upright.png" type="Texture" id=15]
+[ext_resource path="res://textures/deadroot-right.png" type="Texture" id=16]
+[ext_resource path="res://textures/deadroot-downright.png" type="Texture" id=17]
+[ext_resource path="res://textures/deadroot-left.png" type="Texture" id=18]
+[ext_resource path="res://textures/arrow-up.png" type="Texture" id=19]
+[ext_resource path="res://textures/arrow-left.png" type="Texture" id=20]
+[ext_resource path="res://textures/arrow-right.png" type="Texture" id=21]
+[ext_resource path="res://textures/arrow-down.png" type="Texture" id=22]
+[ext_resource path="res://textures/arrow-downleft.png" type="Texture" id=23]
+[ext_resource path="res://textures/arrow-upleft.png" type="Texture" id=24]
+[ext_resource path="res://textures/arrow-upright.png" type="Texture" id=25]
 
 [resource]
 animations = [ {
-"frames": [ ExtResource( 15 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "down",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "down-dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "down-left",
+"speed": 45.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "down-left-dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "down-right",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "down-right-dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "left",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "left-dead",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -45,23 +73,48 @@ animations = [ {
 "name": "mature",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "mature-dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "right",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "right-dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "up",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "up-dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "up-left",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "up-left-dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 10 ) ],
-"loop": true,
+"frames": [ ExtResource( 10 ), ExtResource( 25 ) ],
+"loop": false,
 "name": "up-right",
-"speed": 3.0
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "up-right-dead",
+"speed": 5.0
 } ]
